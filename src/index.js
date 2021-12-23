@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import ProductCatalog from "./App"; //import component(name)
+import App from "./App"; //import component(name)
 
 // we are using react's dom, 
 // this will render our content 
@@ -16,8 +16,8 @@ import ProductCatalog from "./App"; //import component(name)
 // <> ... </> This is called "react fragment"
 ReactDOM.render(
   <>
-    <ProductCatalog />
-    <ProductCatalog />
+  <App/>
+  <App/>
   </>, 
   document.getElementById("root")
 )
