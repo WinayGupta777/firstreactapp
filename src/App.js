@@ -1,10 +1,11 @@
 // this is not function
 // but this is Component
 import ProductCatalogClass from "./components/classComponent";
+import AddItem from "./components/addCounter";
 const App=()=>{
   return(
     <>
-      <ProductCatalogClass></ProductCatalogClass>
+      <AddItem></AddItem>
     </>
   )
 }
