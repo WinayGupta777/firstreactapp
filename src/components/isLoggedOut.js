@@ -1,7 +1,7 @@
 const LogoutPage=()=>{
     return(
         <div>
-            <h2>Login Page</h2>
+            <h2>You are Logged Out!!</h2>
         </div>
     )
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import LoginPage from "./isLoggedin";
+import LogoutPage from "./isLoggedOut";
 
 class ProductCatalogClass extends React.Component {
     constructor(props){
@@ -6,7 +8,7 @@ class ProductCatalogClass extends React.Component {
         this.state = {
             isLoggedIn : false
         }
-        this.togglePage=this.togglePage.bind(this);
+        // this.togglePage=this.togglePage.bind(this);
     }
     togglePage(){
         //this.state.isLoggedIn = !this.state.isLoggedIn;  //you can't do this
@@ -15,9 +17,9 @@ class ProductCatalogClass extends React.Component {
     render(){
         return(
             <div>
-                <button onClick={this.togglePage}>Sign In</button>
-                <button onClick={this.togglePage}>Sign Out</button>
-                {this.state.isLoggedIn ? <p>True</p> : <p>False</p>}
+                <button onClick={this.togglePage.bind(this)}>Sign In</button>
+                <button onClick={this.togglePage.bind(this)}>Sign Out</button>
+                {this.state.isLoggedIn ? <LoginPage></LoginPage> : <LogoutPage></LogoutPage>}
             </div>
         )
     }
