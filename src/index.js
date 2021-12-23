@@ -9,7 +9,13 @@ import ReactDOM from "react-dom";
 // .render() will take two param
 // 1st == JSX (Html tag)
 // 2nd == will give this JSX, to index.html's body-->div
+//        bcoz index.html is the one who gives content to browser!! 
+
+// <> ... </> This is called "react fragment"
 ReactDOM.render(
-  <h1>Hello</h1>, 
+  <>
+    <h1>Hello</h1>
+    <p>CRA</p>
+  </>, 
   document.getElementById("root")
 )
