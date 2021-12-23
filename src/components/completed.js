@@ -6,9 +6,9 @@ class Completed extends React.Component {
     render(){return(
         <>
             <h2>Completed Tasks</h2>
-            <p>{this.props.list[0].title}</p>
-            <p>{this.props.list[1].title}</p>
-            {/* This thing we cant do for huge data */}
+            {this.props.list.map(
+                (i)=><p>{i.title}</p> 
+            )}
         </>
     )}
 }
