@@ -1,18 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//es6 standards
+import React from "react";
+import ReactDOM from "react-dom";
 
+// we are using react's dom, 
+// this will render our content 
+// to brower.
+
+// .render() will take two param
+// 1st == JSX (Html tag)
+// 2nd == will give this JSX, to index.html's body-->div
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    {/* reusing component */}
-    <App /> 
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-reportWebVitals();
-
-// <App /> This is JSX.
+  <h1>Hello</h1>, 
+  document.getElementById("root")
+)
