@@ -7,9 +7,15 @@ class Pending extends React.Component {
     render(){return(
         <>
             <h2>Pending Tasks</h2>
-            <p>{this.props.list[0].title}</p>
-            <p>{this.props.list[1].title}</p>
-        </>
+            {this.props.list.map(
+                (i)=>
+                <div>
+                    <p>{i.title}</p>
+                    <button>Done</button>
+                    <button>Delete</button>
+                </div>
+            )}
+        </> 
     )}
 }
 

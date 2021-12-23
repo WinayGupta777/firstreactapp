@@ -7,7 +7,11 @@ class Completed extends React.Component {
         <>
             <h2>Completed Tasks</h2>
             {this.props.list.map(
-                (i)=><p>{i.title}</p> 
+                (i)=>
+                <div>
+                    <p>{i.title}</p>
+                    <button>Delete</button>
+                </div>
             )}
         </>
     )}
