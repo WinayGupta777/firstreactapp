@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+// this is not function
+// but this is Component
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+    <>
+      <img src="https://rukminim1.flixcart.com/flap/50/50/image/d5e889d535edb9f6.jpg?q=50"></img>
+      <a href="">Buy here</a>
+    </>
+  )
 }
 
+//we have to export, so that index.js can import...!
 export default App;

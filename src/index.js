@@ -2,6 +2,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import App from "./App"; //import component(name)
+
 // we are using react's dom, 
 // this will render our content 
 // to brower.
@@ -14,13 +16,7 @@ import ReactDOM from "react-dom";
 // <> ... </> This is called "react fragment"
 ReactDOM.render(
   <>
-    <img src="https://rukminim1.flixcart.com/flap/50/50/image/d5e889d535edb9f6.jpg?q=50"></img>
-    <a href="">Buy here</a>
-
-    {/* Now Suppose this above tags are for one product
-    WHat if I have 1000+ products ???
-    So, we first make the component of this two tag,
-    then will use that component for 1000+ time!*/}
+    <App />
   </>, 
   document.getElementById("root")
 )
