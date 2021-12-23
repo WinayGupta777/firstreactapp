@@ -16,8 +16,7 @@ import App from "./App"; //import component(name)
 // <> ... </> This is called "react fragment"
 ReactDOM.render(
   <>
-  <App/>
-  <App/>
+    <App/>
   </>, 
   document.getElementById("root")
 )
