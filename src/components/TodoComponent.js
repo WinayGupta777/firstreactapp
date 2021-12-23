@@ -1,4 +1,6 @@
 import React from "react";
+import Completed from "./completed";
+import Pending from "./pending";
 
 let todoList = [
     {
@@ -19,6 +21,7 @@ let todoList = [
     }
 ];
 
+
 class TodoComponent extends React.Component {
     constructor(props){
         super(props)
@@ -27,20 +30,22 @@ class TodoComponent extends React.Component {
         }
     }
     getPending=()=>{
-        let pend = this.state.todos.filter(
+        let pends = this.state.todos.filter(
             (i)=>i.status===true
         );
-        console.log(pend);
+        return pends;
     }
     getCompleted=()=>{
-
+        let pends = this.state.todos.filter(
+            (i)=>i.status===false
+        );
+        return pends;
     }
     render(){
         return(
             <>
-                <button onClick={this.getPending}>press</button>
-                {/* <Pending></Pending>
-                <Completed></Completed> */}
+                <Pending list={this.getPending()}></Pending>
+                <Completed list={this.getCompleted()}></Completed>
             </>
         )
     }
