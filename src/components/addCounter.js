@@ -6,11 +6,17 @@ class AddItem extends React.Component {
             count:1
         }
     }
+    onPlus=()=>{
+        this.setState({count: this.state.count + 1})
+    }
+    onMinus=()=>{
+        this.setState({count: this.state.count - 1})
+    }
     render() {
         return(<div>
-            <button>+</button>
+            <button onClick={this.onPlus}>+</button>
             {this.state.count}
-            <button>-</button>
+            <button onClick={this.onMinus}>-</button>
         </div>)
     }
 }
