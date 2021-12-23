@@ -7,10 +7,6 @@ class ProductCatalogClass extends React.Component {
     render(){
         return(
             <>
-                <img  src={this.props.imgSrc}></img><br/>
-                <button>Buy Here</button>
-                <>${this.props.price}</>
-                <br/>
             </>
         )
     }
