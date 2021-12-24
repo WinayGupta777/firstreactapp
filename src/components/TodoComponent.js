@@ -8,6 +8,10 @@ let todoList = [
         status: true
     },
     {
+        title: "Update zoom app",
+        status: true
+    },
+    {
         title: "Repair your cycle",
         status: false
     },
@@ -41,11 +45,19 @@ class TodoComponent extends React.Component {
         );
         return pends;
     }
+    changeState=(iTitle)=>{
+        //as we cant change state var directly...
+        // we created deep copy
+        const tmp = [...this.state.todos]; 
+        const block = tmp.find( (i)=>i.title === iTitle );
+        block.status=!block.status;
+    }
     render(){
         return(
             <>
                 <Pending list={this.getPending()}></Pending>
                 <Completed list={this.getCompleted()}></Completed>
+                <button onClick={this.changeState("Update zoom app")}>Change State</button>
             </>
         )
     }
