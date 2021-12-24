@@ -1,7 +1,7 @@
 import React from "react";
 import Completed from "./completed";
 import Pending from "./pending";
-
+import Trash from "./TrashBin";
 let todoList = [
     {
         title: "Do exercise",
@@ -31,7 +31,7 @@ let todoList = [
         title: "watch - No way home",
         status: false,
         id: 5,
-        mode: "active"
+        mode: "deactive"
     }
 ];
 
@@ -63,11 +63,22 @@ class TodoComponent extends React.Component {
         block.status=!block.status;
         this.setState({todos:tmp})
     }
+    move2trash=(blockID)=>{
+        const tmp = [...this.state.todos];
+        const block = tmp.find(  (i)=> i.id===blockID);
+        block.mode = "deactive";
+        this.setState({todos:tmp});
+    }
+    getTrashed=()=>{
+        let d = this.state.todos.filter( (i)=>i.mode==="deactive");
+        return d;
+    }
     render(){
         return(
             <>
-                <Pending list={this.getPending()}   fun={this.changeState}></Pending>
-                <Completed list={this.getCompleted()}></Completed>
+                <Pending list={this.getPending()}   fun={this.changeState}  fun2={this.move2trash}></Pending>
+                <Completed list={this.getCompleted()} fun2={this.move2trash}></Completed>
+                <Trash list={this.getTrashed()}></Trash>
             </>
         )
     }

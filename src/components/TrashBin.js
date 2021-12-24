@@ -7,6 +7,12 @@ class Trash extends React.Component {
     render(){return(
         <>
             <h2>Trash Bin</h2>
+            {this.props.list.map(
+                (i)=>
+                <div>
+                    <p>{i.title}</p>
+                </div>
+            )}
         </>
     )}
 }
