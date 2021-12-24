@@ -45,19 +45,20 @@ class TodoComponent extends React.Component {
         );
         return pends;
     }
-    changeState=(iTitle)=>{
+    changeState=()=>{
         //as we cant change state var directly...
         // we created deep copy
         const tmp = [...this.state.todos]; 
-        const block = tmp.find( (i)=>i.title === iTitle );
+        const block = tmp.find( (i)=>i.title ===  "Update zoom app");
         block.status=!block.status;
+        this.setState({todos:tmp})
     }
     render(){
         return(
             <>
                 <Pending list={this.getPending()}></Pending>
                 <Completed list={this.getCompleted()}></Completed>
-                <button onClick={this.changeState("Update zoom app")}>Change State</button>
+                <button onClick={this.changeState}>Change State</button>
             </>
         )
     }
