@@ -47,7 +47,7 @@ class TodoComponent extends React.Component {
     }
     changeState=()=>{
         //as we cant change state var directly...
-        // we created deep copy
+        //so, we created deep copy
         const tmp = [...this.state.todos]; 
         const block = tmp.find( (i)=>i.title ===  "Update zoom app");
         block.status=!block.status;
