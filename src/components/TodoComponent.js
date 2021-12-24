@@ -31,7 +31,7 @@ let todoList = [
         title: "watch - No way home",
         status: false,
         id: 5,
-        mode: "deactive"
+        mode: "active"
     }
 ];
 
@@ -45,13 +45,13 @@ class TodoComponent extends React.Component {
     }
     getPending=()=>{
         let pends = this.state.todos.filter(
-            (i)=>i.status===true
+            (i)=>i.status===true && i.mode==="active"
         );
         return pends;
     }
     getCompleted=()=>{
         let pends = this.state.todos.filter(
-            (i)=>i.status===false
+            (i)=>i.status===false && i.mode==="active"
         );
         return pends;
     }
@@ -59,13 +59,13 @@ class TodoComponent extends React.Component {
         //as we cant change state var directly...
         //so, we created deep copy
         const tmp = [...this.state.todos]; 
-        const block = tmp.find( (i)=>i.id === blockID);
+        const block = tmp.find( (i)=>i.id === blockID && i.mode === "active");
         block.status=!block.status;
         this.setState({todos:tmp})
     }
     move2trash=(blockID)=>{
         const tmp = [...this.state.todos];
-        const block = tmp.find(  (i)=> i.id===blockID);
+        const block = tmp.find(  (i)=> i.id===blockID  && i.mode === "active");
         block.mode = "deactive";
         this.setState({todos:tmp});
     }

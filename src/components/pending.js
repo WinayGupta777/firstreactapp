@@ -12,6 +12,7 @@ class Pending extends React.Component {
                     <p>{i.title}</p>
                     <button onClick={()=>this.props.fun(i.id)}>Done</button>
                     <button onClick={()=>this.props.fun2(i.id)}>Delete</button>
+                    {console.log(i)}
                 </div>
             )}
         </> 

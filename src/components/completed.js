@@ -9,7 +9,6 @@ class Completed extends React.Component {
             {this.props.list.map(
                 (i)=>
                 <div>
-                    {console.log(i.id)}
                     <p>{i.title}</p>
                     <button onClick={()=>this.props.fun2(i.id)}>Delete</button>
                 </div>
