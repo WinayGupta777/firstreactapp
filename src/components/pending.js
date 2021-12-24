@@ -2,7 +2,6 @@ import React from "react";
 class Pending extends React.Component {
     constructor(props){
         super(props)
-        
     }
     render(){return(
         <>

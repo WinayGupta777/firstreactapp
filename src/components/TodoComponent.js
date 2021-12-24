@@ -5,23 +5,28 @@ import Pending from "./pending";
 let todoList = [
     {
         title: "Do exercise",
-        status: true
+        status: true,
+        id: 1
     },
     {
         title: "Update zoom app",
-        status: true
+        status: true,
+        id: 2
     },
     {
         title: "Repair your cycle",
-        status: false
+        status: false,
+        id: 3
     },
     {
         title: "Research on Linux",
-        status: true
+        status: true,
+        id: 4
     },
     {
         title: "watch - No way home",
-        status: false
+        status: false,
+        id: 5
     }
 ];
 
@@ -45,20 +50,19 @@ class TodoComponent extends React.Component {
         );
         return pends;
     }
-    changeState=()=>{
+    changeState=(blockID)=>{
         //as we cant change state var directly...
         //so, we created deep copy
         const tmp = [...this.state.todos]; 
-        const block = tmp.find( (i)=>i.title ===  "Update zoom app");
+        const block = tmp.find( (i)=>i.id === blockID);
         block.status=!block.status;
         this.setState({todos:tmp})
     }
     render(){
         return(
             <>
-                <Pending list={this.getPending()}></Pending>
+                <Pending list={this.getPending()}   fun={this.changeState}></Pending>
                 <Completed list={this.getCompleted()}></Completed>
-                <button onClick={this.changeState}>Change State</button>
             </>
         )
     }
