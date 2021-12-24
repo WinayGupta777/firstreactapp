@@ -6,27 +6,32 @@ let todoList = [
     {
         title: "Do exercise",
         status: true,
-        id: 1
+        id: 1,
+        mode: "active"
     },
     {
         title: "Update zoom app",
         status: true,
-        id: 2
+        id: 2,
+        mode: "active"
     },
     {
         title: "Repair your cycle",
         status: false,
-        id: 3
+        id: 3,
+        mode: "active"
     },
     {
         title: "Research on Linux",
         status: true,
-        id: 4
+        id: 4,
+        mode: "active"
     },
     {
         title: "watch - No way home",
         status: false,
-        id: 5
+        id: 5,
+        mode: "active"
     }
 ];
 
