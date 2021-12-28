@@ -7,7 +7,7 @@ class Pending extends React.Component {
     render(){
         return(
         <>
-            <h2>Pending Tasks</h2>
+            <h2>◉ Pending Tasks</h2>
             {this.props.list.map(
                 (i)=>
                 <div className="block">

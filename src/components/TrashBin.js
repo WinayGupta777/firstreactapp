@@ -17,7 +17,7 @@ class Trash extends React.Component {
     render(){return(
         <>
             <div className="block">
-                <h2>Trash Bin</h2>
+                <h2>◉ Trash Bin</h2>
                 <button className="trash" onClick={this.clearALL}>Clear</button>
             </div>
             {this.state.isVisible == true ? 

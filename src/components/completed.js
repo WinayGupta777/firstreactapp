@@ -5,7 +5,7 @@ class Completed extends React.Component {
     }
     render(){return(
         <>
-            <h2>Completed Tasks</h2>
+            <h2>◉ Completed Tasks</h2>
             {this.props.list.map(
                 (i)=>
                 <div className="block">
