@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from "./trash.css";
 class Trash extends React.Component {
     constructor(props){
         super(props)
@@ -9,9 +9,10 @@ class Trash extends React.Component {
     }
     render(){return(
         <>
-            <h2>Trash Bin  
-                <button>Clear</button>
-            </h2>
+            <div className="block">
+                <h2>Trash Bin</h2>
+                <button className="trash">Clear</button>
+            </div>
             {this.props.list.map(
                 (i)=>
                 <div>

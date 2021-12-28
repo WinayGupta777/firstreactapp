@@ -8,9 +8,9 @@ class Completed extends React.Component {
             <h2>Completed Tasks</h2>
             {this.props.list.map(
                 (i)=>
-                <div>
+                <div className="block">
                     <p>{i.title}</p>
-                    <button onClick={()=>this.props.fun2(i.id)}>Delete</button>
+                    <button className="del" onClick={()=>this.props.fun2(i.id)}>Delete</button>
                 </div>
             )}
         </>

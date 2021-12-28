@@ -77,7 +77,9 @@ class TodoComponent extends React.Component {
         return(
             <>
                 <Pending list={this.getPending()}   fun={this.changeState}  fun2={this.move2trash}></Pending>
+                <hr></hr>
                 <Completed list={this.getCompleted()} fun2={this.move2trash}></Completed>
+                <hr></hr>
                 <Trash list={this.getTrashed()}></Trash>
             </>
         )
