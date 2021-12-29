@@ -1,5 +1,6 @@
 import React from "react";
 import Pending from "./pending";
+import Completed from "./completed";
 class TodoApi extends React.Component {
     constructor(props){
         super(props)
@@ -18,20 +19,25 @@ class TodoApi extends React.Component {
         );
         return pends;
     }
+    getCompleted=()=>{
+        let pends = this.state.todos.filter(
+            (i)=>i.completed===false
+        );
+        return pends;
+    }
+    changeState=(blockID)=>{
+        //as we cant change state var directly...
+        //so, we created deep copy
+        const tmp = [...this.state.todos]; 
+        const block = tmp.find( (i)=>i.id === blockID);
+        block.completed=!block.completed;
+        this.setState({todos:tmp})
+    }
     render(){
         return(
             <>
-                <Pending list={this.getPending()}   fun={this.changeState}  fun2={this.move2trash}></Pending>
-            {/* <h3>
-                {this.state.todos.map(
-                    (i)=>
-                    <>
-                        <p>Id:{i.id}</p>
-                        <p>Title:{i.title}</p>
-                        <p>Completed:{i.completed}</p>
-                    </>
-                )}
-            </h3> */}
+                <Pending list={this.getPending()}   fun={this.changeState}></Pending>
+                <Completed list={this.getCompleted()}></Completed>
             </>
         )
     }

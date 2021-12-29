@@ -13,7 +13,7 @@ class Pending extends React.Component {
                 <div className="block">
                     <p>{i.title}</p>
                     <button className="com" onClick={()=>this.props.fun(i.id)}>Done</button>
-                    <button className="del" onClick={()=>this.props.fun2(i.id)}>Delete</button>
+                    <button className="del">Delete</button>
                     {console.log(i)}
                 </div>
             )}
