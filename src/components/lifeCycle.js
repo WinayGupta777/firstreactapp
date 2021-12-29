@@ -17,3 +17,15 @@ class LifeCycle extends React.Component {
 }
 
 export default LifeCycle;
+
+// When Actual brower shows the things
+// before it React LifeCycle runs...!
+//  |  Mount   |   Update   |  Unmount |
+//  |----------|------------|----------|
+//  |  const   |            |          |
+//  |  render <--------     |          |
+//  |    |             \    |          |
+//  |compDidMount       \   \__________|
+//  |      \________>comDidUpdate
+
+// So, this is lifecyle running!!
