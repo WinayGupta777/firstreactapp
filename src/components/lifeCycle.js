@@ -7,6 +7,18 @@ class LifeCycle extends React.Component {
             msg: "Previour Message"
         }
     }
+    //This method will run after 
+    // render() method automatically!!
+    componentDidMount=()=>{
+        setTimeout(() => {
+           this.setState({msg: "New message!!"}); 
+        }, 5000);
+    }
+    //After DidMount called DidUpdate() will run automatically!!
+    componentDidUpdate=(prevMsg)=>{
+        if (prevMsg.msg!==this.state.msg)
+        {document.getElementById("just").innerHTML="Update occured!!"}
+    }
     render(){
         return(
             <>
@@ -17,15 +29,3 @@ class LifeCycle extends React.Component {
 }
 
 export default LifeCycle;
-
-// When Actual brower shows the things
-// before it React LifeCycle runs...!
-//  |  Mount   |   Update   |  Unmount |
-//  |----------|------------|----------|
-//  |  const   |            |          |
-//  |  render <--------     |          |
-//  |    |             \    |          |
-//  |compDidMount       \   \__________|
-//  |      \________>comDidUpdate
-
-// So, this is lifecyle running!!
