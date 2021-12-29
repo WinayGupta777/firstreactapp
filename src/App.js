@@ -5,10 +5,11 @@ import AddItem from "./components/addCounter";
 import TodoComponent from "./components/TodoComponent";
 
 import LifeCycle from "./components/lifeCycle";
+import TodoApi from "./components/todoWithAPI";
 const App=()=>{
   return(
     <>
-      <LifeCycle></LifeCycle>
+      <TodoApi></TodoApi>
     </>
   )
 }

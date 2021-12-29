@@ -18,7 +18,7 @@ class LifeCycle extends React.Component {
     componentDidUpdate=(prevMsg)=>{
         if (prevMsg.msg!==this.state.msg)
         {document.getElementById("just").innerHTML="Update occured!!"}
-    }
+    }// You have to make new Element with "Id" in index.html file!!
     render(){
         return(
             <>
